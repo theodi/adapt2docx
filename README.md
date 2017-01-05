@@ -13,7 +13,7 @@ NOTE: It does not do the inverse! So you still have to apply changes by hand, or
 
 From your course run:
 
-  grunt translate:export --format="json" --masterLang="en"
+```grunt translate:export --format="json" --masterLang="en"```
 
 ## Step 2 - Export each page you need as HTML (full page)
 
@@ -27,7 +27,7 @@ Once saved you can remove the files directory to just leave the HTML page.
 
 On OS X or linux run (from your course directory)
 
-  cat languagefiles/en/export.json | grep \"id\"
+```cat languagefiles/en/export.json | grep \"id\"```
 
 If you have used the authoring tool there is a chance that all the IDs start the same, e.g. 58...
 
@@ -35,7 +35,7 @@ If you have used the authoring tool there is a chance that all the IDs start the
 
 Run
 
-  php adapt2docx.php *inputfile.html* *identifer marker (e.g. 58)* > *outputfile.html*
+```php adapt2docx.php *inputfile.html* *identifer marker (e.g. 58)* > *outputfile.html*```
 
 ## Step 5 - Use Convertio to convert the output files to docx (To be automated)
 
