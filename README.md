@@ -6,32 +6,37 @@ NOTE: It does not do the inverse! So you still have to apply changes by hand, or
 
 ## Requirements
 
-* Adapt 2 framework >2.0.11
 * php command line
 
-## Step 1 - Export each page you need as HTML (full page)
+## Step 1
+
+Clone this repository and then create a "course" folder inside where it downloaded to.
+
+## Step 2 - Export each page you need as HTML (full page)
 
 Load each page your require as a docx in Google Chrome (not Safari).
 
-Once loaded export each as a full page (Web page, complete) into the course build directory.
+Once loaded export each as a full page (Web page, complete) into the course folder you just created
 
-Once saved you can remove the files directory to just leave the HTML page.
+Once saved you can remove the files directory to just leave the HTML page/s.
 
-## Step 2 - Identify the identifiers marker (To be automated)
+## Step 3 - Download the courses components file
 
-On OS X or linux run (from your course directory)
+From your course page you have just saved browse to course/en/components.json and save this file in the course folder also.
 
-```cat languagefiles/en/export.json | grep \"id\"```
+Note: Change the language from en if you are not deling with English.
 
-If you have used the authoring tool there is a chance that all the IDs start the same, e.g. 58...
+## Step 4 - Identify the identifiers marker (To be automated)
 
-## Step 3 - Run adapt2docx2
+While you still have the components file loaded in your browser search for "_id" and note down what the IDs all start with, e.g. "58...".
 
-Run
+## Step 5 - Run adapt2docx2
 
-```php adapt2docx2.php *inputfile.html* *identifer marker (e.g. 58)* > *outputfile.html*```
+Open a terminal to where you downloaded adapt2docx2 (not the courses folder) and type
 
-## Step 5 - Use Convertio to convert the output files to docx (To be automated)
+```php adapt2docx2.php *course/inputfile.html* *identifer marker (e.g. 58)* > *outputfile.html*```
+
+## Step 6 - Use Convertio to convert the output files to docx (To be automated)
 
 Go to https://convertio.co/html-docx and upload the output html files from Step 4 to be converted.
 

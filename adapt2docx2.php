@@ -20,7 +20,7 @@
 	unlink('out.tmp');
 	$ids = $oids;
 
-	$string = file_get_contents("../src/course/en/components.json");
+	$string = file_get_contents("course/components.json");
 	$data = json_decode($string,true);
 	for ($i=0;$i<count($data);$i++) {
 		$node = $data[$i];
