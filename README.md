@@ -34,9 +34,9 @@ While you still have the components file loaded in your browser search for "_id"
 
 ## Step 5 - Run adapt2docx2
 
-Open a terminal to where you downloaded adapt2docx2 (not the courses folder) and type
+Open a terminal to where you downloaded adapt2docx2 (not the courses folder) and type (replacing all the bits as necessary)
 
-```php adapt2docx2.php *course/inputfile.html* *identifer marker (e.g. 58)* > *outputfile.html*```
+```php adapt2docx2.php <course/inputfile.html> <identifer marker (e.g. 58)> > <outputfile.html>```
 
 ## Step 6 - Use Convertio to convert the output files to docx (To be automated)
 
