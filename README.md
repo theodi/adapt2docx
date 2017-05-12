@@ -18,7 +18,7 @@ Then create a "course" folder inside where it downloaded (and unzipped) to.
 
 Load each page your require as a docx in Google Chrome (not Safari).
 
-Once loaded export each as a full page (Web page, complete) into the course folder you just created
+Once loaded export each as a full page (Web page, complete) into the course folder you just created (NO SPACES IN FILE NAME)
 
 Once saved you can remove the files directory to just leave the HTML page/s.
 
