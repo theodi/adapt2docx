@@ -10,7 +10,9 @@ NOTE: It does not do the inverse! So you still have to apply changes by hand, or
 
 ## Step 1
 
-Clone this repository and then create a "course" folder inside where it downloaded to.
+Download this code (zip file) and unzip it.
+
+Then create a "course" folder inside where it downloaded (and unzipped) to.
 
 ## Step 2 - Export each page you need as HTML (full page)
 
