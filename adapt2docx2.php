@@ -28,6 +28,9 @@
 			$parts[$node["_id"]] = $node;
 		}
 	}
+	echo '<!DOCTYPE html>' . "\n";
+	echo '<html id="adapt" class="js flexbox flexboxlegacy canvas no-touch rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio applicationcache chrome version-57.0 OS-linux pixel-density-low dir-ltr size-large orientation-landscape" lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">' . "\n";
+
 	for ($i=0;$i<count($ids);$i++) {
 		$component = $parts[$ids[$i]];
 		if ($component["_component"] != "graphic") {
@@ -35,6 +38,8 @@
 			
 		}
 	}
+
+	echo '</head></html>';
 
 function output($component) {
 	if ($component["_component"] == "text" || $component["_component"] == "media") {
