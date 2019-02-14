@@ -44,7 +44,7 @@
 function output($component) {
 	if ($component["_component"] == "text" || $component["_component"] == "media" || $component["_component"] == "media-autoplay") {
 		outputText($component);
-	} elseif ($component["_canShowFeedback"]) {
+	} elseif (@array_key_exists("_canShowFeedback", $component)) {
 		outputText($component);
 		outputQuestion($component);
 	} elseif ($component["_component"] == "accordion") {
