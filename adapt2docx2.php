@@ -42,7 +42,7 @@
 	echo '</head></html>';
 
 function output($component) {
-	if ($component["_component"] == "text" || $component["_component"] == "media") {
+	if ($component["_component"] == "text" || $component["_component"] == "media" || $component["_component"] == "media-autoplay") {
 		outputText($component);
 	} elseif ($component["_canShowFeedback"]) {
 		outputText($component);
@@ -57,13 +57,14 @@ function output($component) {
 		outputText($component);
 		outputMatching($component);
 	} elseif ($component) {
-		print_r($component);
+		print_r($component["_component"]);
+		//print_r($component);
 		exit(1);
 	}
 }
 
 function outputText($component) {
-	echo "<h2>" . strip_tags($component["displayTitle"]) . "</h2>";
+	echo "<h2>" . strip_tags($component["title"]) . "</h2>";
 	echo "<p>" . trim($component["body"]) . "</p>";
 }
 function outputQuestion($component) {
