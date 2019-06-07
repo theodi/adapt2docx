@@ -33,16 +33,16 @@
 
 	for ($i=0;$i<count($ids);$i++) {
 		$component = $parts[$ids[$i]];
-		if ($component["_component"] != "graphic") {
+		//if ($component["_component"] != "graphic") {
 			output($component);
 			
-		}
+		//}
 	}
 
 	echo '</head></html>';
 
 function output($component) {
-	if ($component["_component"] == "text" || $component["_component"] == "media" || $component["_component"] == "media-autoplay") {
+	if ($component["_component"] == "text" || $component["_component"] == "media" || $component["_component"] == "media-autoplay" || $component["_component"] == "graphic") {
 		outputText($component);
 	} elseif (@array_key_exists("_canShowFeedback", $component)) {
 		outputText($component);
@@ -64,8 +64,10 @@ function output($component) {
 }
 
 function outputText($component) {
-	echo "<h2>" . strip_tags($component["title"]) . "</h2>";
-	echo "<p>" . trim($component["body"]) . "</p>";
+	if (trim($component["body"])) {
+		echo "<h2>" . strip_tags($component["title"]) . "</h2>";
+		echo "<p>" . trim($component["body"]) . "</p>";
+	}
 }
 function outputQuestion($component) {
 	$items = $component["_items"];
