@@ -65,7 +65,7 @@ function output($component) {
 
 function outputText($component) {
 	if (trim($component["body"])) {
-		echo "<h2>" . strip_tags($component["title"]) . "</h2>";
+		echo "<h2>" . outputTitle(strip_tags($component["title"])) . "</h2>";
 		echo "<p>" . trim($component["body"]) . "</p>";
 	}
 }
@@ -148,6 +148,23 @@ function filter($data) {
 		$ret[] = $data[$i];
 	}
 	return $ret;
+}
+
+function outputTitle($value) {
+	if (trim($value) == "") {
+		return;
+	}
+	if (trim($value) == "Component title") {
+		return;
+	}
+	if (trim($value) == "Article title") {
+		return;
+	}
+	if (trim($value) == "Page title") {
+		return;
+	}
+	return $value;
+	
 }
 
 ?>
