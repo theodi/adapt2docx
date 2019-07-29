@@ -56,6 +56,8 @@ function output($component) {
 	} elseif ($component["_component"] == "matching") {
 		outputText($component);
 		outputMatching($component);
+	} elseif ($component["_component"] == "notify-imagegrid") {
+		outputImageGrid($component);
 	} elseif ($component) {
 		print_r($component["_component"]);
 		//print_r($component);
@@ -67,6 +69,14 @@ function outputText($component) {
 	if (trim($component["body"])) {
 		echo "<h2>" . outputTitle(strip_tags($component["title"])) . "</h2>";
 		echo "<p>" . trim($component["body"]) . "</p>";
+	}
+}
+function outputImageGrid($component) {
+	outputText($component);
+	$items = $component["_items"];
+	for($i=0;$i<count($items);$i++) {
+		echo '<h2>' . outputTitle(strip_tags($items[$i]["_graphic"]["title"])) . '</h2>';
+		echo "<p>" . trim(strip_tags($items[$i]["_graphic"]["gridmessage"])) . "</p>";
 	}
 }
 function outputQuestion($component) {
